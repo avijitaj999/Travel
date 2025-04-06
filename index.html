@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/24d4a3f7d8.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
+<header>
         <a href="#" class="brand">Travel</a>
         <div class="menu-btn"></div>
         <div class="navigation">
@@ -20,27 +20,56 @@
                 <a href="#">Contact</a>
             </div>
         </div>
-    </header>
+</header>
     <section class="home">
+        <video class="video-slide active" src="72566-543910236_tiny.mp4" autoplay loop muted></video>
+        <video class="video-slide" src="4K Lively Wallpapers- Best Collection of Free 600+ Lively Wallpaper Videos & Backgrounds.mp4" autoplay loop muted></video>
         <video class="video-slide" src="Waves, Sea, Ocean. Free Stock Video.mp4" autoplay loop muted></video>
+        <video class="video-slide" src="9487-220088145_large.mp4" autoplay loop muted></video>
         <div class="content">
             <h1>Wonderful.<br><span>Island</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, explicabo. Debitis qui provident voluptas incidunt impedit. Repellat nemo illo harum? Autem voluptatum vero laudantium? Aut eaque ducimus neque tempore modi!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, explicabo. Debitis qui provident voluptas
+                incidunt impedit. Repellat nemo illo harum? Autem voluptatum vero laudantium? Aut eaque ducimus neque
+                tempore modi!</p>
             <a href="#">Read More</a>
         </div>
-        <div class="media-icon">
+        <div class="media-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a class="insta" href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn active"></div>
+            <div class="nav-btn active"></div>
+            <div class="nav-btn active"></div>
+        </div>
     </section>
+    
     <script type="text/javascript">
         const menuBtn = document.querySelector(".menu-btn");
         const navigation = document.querySelector(".navigation");
-        menuBtn.addEventListener("click", () => { 
+        menuBtn.addEventListener("click", () => {
             menuBtn.classList.toggle("active");
             navigation.classList.toggle("active");
         });
+        // JavaScript for slider
+        const btns = document.querySelectorAll(".nav-btn");
+        const sliders = document.querySelectorAll(".video-slide");
+        // Set first video as active
+        sliders[0].classList.add("active");
+        btns[0].classList.add("active");
+        const sliderNav = function (manual) {
+            btns.forEach((btn) => btn.classList.remove("active"));
+            sliders.forEach((slide) => slide.classList.remove("active"));
+            btns[manual].classList.add("active");
+            sliders[manual].classList.add("active");};
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
     </script>
 </body>
+
 </html>
